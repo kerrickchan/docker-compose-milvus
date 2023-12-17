@@ -1,0 +1,21 @@
+version: '3.9'
+
+name: milvus
+services:
+  etcd:
+    extends:
+      file: docker-compose-milvus-standalone.yml
+      service: etcd
+    restart: unless-stopped
+
+  minio:
+    extends:
+      file: docker-compose-milvus-standalone.yml
+      service: minio
+    restart: unless-stopped
+
+  milvus:
+    extends:
+      file: docker-compose-milvus-standalone.yml
+      service: standalone
+    restart: unless-stopped
