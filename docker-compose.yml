@@ -19,3 +19,7 @@ services:
       file: docker-compose-milvus-standalone.yml
       service: standalone
     restart: unless-stopped
+
+volumes:
+  etcd:
+  milvus:
